@@ -11,20 +11,16 @@ function Navbar() {
       </NavLink>
       <ul className={styles.links_list}>
         <li>
-          <NavLink
-            to="/"
-            className={({ isActive }) => (isActive ? styles.active : '')}
-          >
-            Home
-          </NavLink>
+          <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink
-            to="about"
-            className={({ isActive }) => (isActive ? styles.active : '')}
-          >
-            About
-          </NavLink>
+          <NavLink to="/login">Entrar</NavLink>
+        </li>
+        <li>
+          <NavLink to="/register">Cadastrar</NavLink>
+        </li>
+        <li>
+          <NavLink to="/about">Sobre</NavLink>
         </li>
       </ul>
     </nav>
