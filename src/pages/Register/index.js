@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './styles.module.css';
+// import styles from './styles.module.css';
 
 function Register() {
   return (
     <div>
       <h1>Cadastre-se para começar a postar</h1>
-      <p>Cria sua conta e compartilhe suas histórias e ideias</p>
+      <p>Crie sua conta e compartilhe suas ideias e histórias</p>
       <form>
         <label htmlFor="name">
           <span>Nome:</span>
