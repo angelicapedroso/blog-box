@@ -1,9 +1,9 @@
 import React from 'react';
-// import styles from './styles.module.css';
+import styles from './styles.module.css';
 
 function Register() {
   return (
-    <div>
+    <div className={styles.register}>
       <h1>Cadastre-se para começar a postar</h1>
       <p>Crie sua conta e compartilhe suas ideias e histórias</p>
       <form>
@@ -13,7 +13,6 @@ function Register() {
             type="text"
             name="name"
             required
-            placeholder="Digite seu nome"
           />
         </label>
         <label htmlFor="email">
@@ -22,7 +21,6 @@ function Register() {
             type="email"
             name="email"
             required
-            placeholder="Digite seu e-mail"
           />
         </label>
         <label htmlFor="password">
@@ -31,7 +29,6 @@ function Register() {
             type="password"
             name="password"
             required
-            placeholder="Digite sua senha"
           />
         </label>
         <label htmlFor="confirmPassword">
@@ -40,7 +37,6 @@ function Register() {
             type="password"
             name="confirmPassword"
             required
-            placeholder="Confirme sua senha"
           />
         </label>
         <button className="btn" type="submit">Cadastrar</button>
