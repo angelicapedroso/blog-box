@@ -6,8 +6,8 @@ function Navbar() {
   return (
     <nav className={styles.navbar}>
       <NavLink to="/" className={styles.brand}>
+        <span>Code</span>
         Blog
-        <span>Box</span>
       </NavLink>
       <ul className={styles.links_list}>
         <li>

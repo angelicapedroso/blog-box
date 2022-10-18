@@ -9,7 +9,6 @@ function Register() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { createUser, errors: authError, loading } = useAuthentication();
 
   const handleSubmit = async (e) => {
