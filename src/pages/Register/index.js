@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
+import useAuthentication from '../../hooks/useAuthentication';
 
 function Register() {
   const [name, setName] = useState('');
@@ -8,7 +9,10 @@ function Register() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { createUser, errors: authError, loading } = useAuthentication();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     setError('');
@@ -24,8 +28,16 @@ function Register() {
       return;
     }
 
-    console.log(user);
+    const res = createUser(user);
+
+    console.log(res);
   };
+
+  useEffect(() => {
+    if (authError) {
+      setError(authError);
+    }
+  }, [authError]);
 
   return (
     <div className={styles.register}>
@@ -72,7 +84,8 @@ function Register() {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </label>
-        <button className="btn" type="submit">Cadastrar</button>
+        {!loading && <button className="btn" type="submit">Cadastrar</button>}
+        {loading && <button className="btn" type="submit" disabled>Aguarde...</button>}
         {error && <p className="error">{error}</p>}
       </form>
     </div>
