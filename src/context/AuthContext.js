@@ -13,4 +13,17 @@ export function useAuthValue() {
 
 AuthProvider.propTypes = {
   children: PropTypes.node.isRequired,
+  value: PropTypes.shape({
+    displayName: PropTypes.string,
+    email: PropTypes.string,
+  }),
+};
+
+AuthProvider.defaultProps = {
+  value: {
+    user: {
+      displayName: '',
+      email: '',
+    },
+  },
 };
