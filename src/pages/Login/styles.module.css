@@ -1,0 +1,11 @@
+.login {
+  text-align: center;
+}
+
+h1 {
+  color: var(--color-five);
+}
+
+p {
+  color: var(--color-four);
+}

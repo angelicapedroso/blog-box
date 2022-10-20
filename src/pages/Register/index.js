@@ -24,12 +24,11 @@ function Register() {
 
     if (password !== confirmPassword) {
       setError('As senhas precisam ser iguais');
-      return;
     }
 
     const res = createUser(user);
 
-    console.log(res);
+    return res;
   };
 
   useEffect(() => {
