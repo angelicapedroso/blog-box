@@ -3,7 +3,7 @@ import {
   createUserWithEmailAndPassword,
   // signInWithEmailAndPassword,
   updateProfile,
-  // signOut,
+  signOut,
 } from 'firebase/auth';
 
 import { useEffect, useState } from 'react';
@@ -62,6 +62,11 @@ const useAuthentication = () => {
     return null;
   };
 
+  const logout = () => {
+    checkIfCancelled();
+    signOut(auth);
+  };
+
   useEffect(() => () => setCancelled(true), []);
 
   return {
@@ -69,6 +74,7 @@ const useAuthentication = () => {
     createUser,
     errors,
     loading,
+    logout,
   };
 };
 

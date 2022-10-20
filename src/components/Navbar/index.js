@@ -1,11 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-// import { useAuthentication } from '../../hooks/useAuthentication';
+import useAuthentication from '../../hooks/useAuthentication';
 import { useAuthValue } from '../../context/AuthContext';
 import styles from './styles.module.css';
 
 function Navbar() {
   const { user } = useAuthValue();
+  const { logout } = useAuthentication();
 
   return (
     <nav className={styles.navbar}>
@@ -40,6 +41,18 @@ function Navbar() {
         <li>
           <NavLink to="/about">Sobre</NavLink>
         </li>
+        {
+          user && (
+            <li>
+              <button
+                type="button"
+                onClick={logout}
+              >
+                Sair
+              </button>
+            </li>
+          )
+        }
       </ul>
     </nav>
   );

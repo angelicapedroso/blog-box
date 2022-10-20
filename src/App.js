@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div className="container">
-      <AuthProvider value={user}>
+      <AuthProvider value={{ user }}>
         <BrowserRouter>
           <Navbar />
           <div className="container">
