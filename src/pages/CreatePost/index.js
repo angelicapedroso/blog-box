@@ -1,17 +1,33 @@
 import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import { useAuthValue } from '../../context/auth';
 // import styles from './styles.module.css';
+// import { useNavigate } from 'react-router-dom';
+import { useAuthValue } from '../../context/AuthContext';
+import useInsertDocument from '../../hooks/useInsertDocument';
 
 function CreatePost() {
   const [title, setTitle] = useState('');
   const [image, setImage] = useState('');
   const [body, setBody] = useState('');
   const [tags, setTags] = useState('');
-  // const [formError, setFormError] = useState('');
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [formError, setFormError] = useState('');
+
+  const { user } = useAuthValue();
+
+  const { response, insertDocument } = useInsertDocument('posts');
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFormError('');
+
+    insertDocument({
+      title,
+      image,
+      body,
+      tags,
+      uid: user.uid,
+      createBy: user.displayName,
+    });
   };
 
   return (
@@ -66,10 +82,9 @@ function CreatePost() {
             placeholder="Insira as tags separadas por vírgula"
           />
         </label>
-        <button className="btn" type="submit">Cadastrar</button>
-        {/* {!loading && <button className="btn" type="submit">Cadastrar</button>}
-        {loading && <button className="btn" type="submit" disabled>Aguarde...</button>}
-        {error && <p className="error">{error}</p>} */}
+        {!response.loading && <button className="btn" type="submit">Cadastrar</button>}
+        {response.loading && <button className="btn" type="button" disabled>Aguarde...</button>}
+        {response.error && <p className="error">{response.error}</p>}
       </form>
     </div>
   );
