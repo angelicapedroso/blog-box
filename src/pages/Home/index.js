@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
 import useFetchDocuments from '../../hooks/useFetchDocuments';
+import PostDetail from '../../components/PostDetail';
 
 function Home() {
   const [query, setQuery] = useState('');
@@ -25,9 +26,7 @@ function Home() {
       </form>
       <div className={styles.posts}>
         {loading && <p>Carregando...</p>}
-        {posts && posts.map((post) => (
-          <h3>{post.title}</h3>
-        ))}
+        {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}
         {posts && posts.length === 0 && (
           <div className={styles.noposts}>
             <p>Nenhum post encontrado</p>

@@ -90,8 +90,8 @@ textarea {
 .btn.btn-outline {
   background-color: transparent;
   border-radius: 0;
-  color: var(--color-one);
-  border: 1px solid var(--color-one);
+  color: var(--color-five);
+  border: 1px solid var(--color-four);
   padding: 7px 30px;
 }
 
@@ -101,7 +101,7 @@ textarea {
 }
 
 .btn.btn-outline:hover {
-  background-color: #000;
+  background-color: var(--color-three);
 }
 
 .btn.btn-danger:hover {
