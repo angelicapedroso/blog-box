@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import styles from './styles.module.css';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAuthValue } from '../../context/AuthContext';
 import useInsertDocument from '../../hooks/useInsertDocument';
 
@@ -9,8 +9,9 @@ function CreatePost() {
   const [image, setImage] = useState('');
   const [body, setBody] = useState('');
   const [tags, setTags] = useState('');
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [formError, setFormError] = useState('');
+
+  const navigate = useNavigate();
 
   const { user } = useAuthValue();
 
@@ -20,14 +21,29 @@ function CreatePost() {
     e.preventDefault();
     setFormError('');
 
+    try {
+      // eslint-disable-next-line no-new
+      new URL(image);
+    } catch (error) {
+      setFormError('A URL da imagem é inválida');
+    }
+
+    const tagsArray = tags.split(',').map((tag) => tag.trim().toLowerCase());
+
+    if (!title || !image || !tags || !body) {
+      setFormError('Todos os campos são obrigatórios.');
+    }
+
     insertDocument({
       title,
       image,
       body,
-      tags,
+      tagsArray,
       uid: user.uid,
       createBy: user.displayName,
     });
+
+    return navigate('/');
   };
 
   return (
@@ -85,6 +101,7 @@ function CreatePost() {
         {!response.loading && <button className="btn" type="submit">Cadastrar</button>}
         {response.loading && <button className="btn" type="button" disabled>Aguarde...</button>}
         {response.error && <p className="error">{response.error}</p>}
+        {formError && <p className="error">{formError}</p>}
       </form>
     </div>
   );
