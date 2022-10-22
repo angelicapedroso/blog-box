@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
+import useFetchDocuments from '../../hooks/useFetchDocuments';
 
 function Home() {
   const [query, setQuery] = useState('');
-  const [posts] = useState([]);
+  const { documents: posts, loading } = useFetchDocuments('posts');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,7 +13,7 @@ function Home() {
 
   return (
     <div className={styles.home}>
-      <h1>Vejo os posts mais recentes</h1>
+      <h1>Veja os posts mais recentes</h1>
       <form onSubmit={handleSubmit} className={styles.search_form}>
         <input
           type="text"
@@ -22,8 +23,11 @@ function Home() {
         />
         <button type="submit" className="btn btn-dark">Buscar</button>
       </form>
-      <div>
-        <h1>Posts</h1>
+      <div className={styles.posts}>
+        {loading && <p>Carregando...</p>}
+        {posts && posts.map((post) => (
+          <h3>{post.title}</h3>
+        ))}
         {posts && posts.length === 0 && (
           <div className={styles.noposts}>
             <p>Nenhum post encontrado</p>

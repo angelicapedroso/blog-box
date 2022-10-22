@@ -30,3 +30,7 @@
   text-decoration: none;
   padding: 10px 25px;
 }
+
+.posts h3{
+  color: var(--color-five)
+}
