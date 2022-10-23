@@ -12,16 +12,16 @@ function Search() {
   const { documents: posts } = useFetchDocuments('posts', search);
 
   return (
-    <div className={styles.search}>
-      <div>
-        {posts && posts.length === 0 && (
-          <div>
-            <p>Não foi encontrado nenhum post com a sua busca...</p>
-            <Link to="/" className="btn btn-light">Voltar</Link>
-          </div>
-        )}
-        {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}
-      </div>
+    <div className={styles.search_container}>
+      {posts && posts.length === 0 && (
+        <div className={styles.noposts}>
+          <p>Não foi encontrado nenhum post com a sua busca...</p>
+          <Link to="/" className="btn btn-light">
+            Voltar
+          </Link>
+        </div>
+      )}
+      {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}
     </div>
   );
 }
