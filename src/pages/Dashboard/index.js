@@ -30,13 +30,13 @@ function Dashboard() {
           </Link>
         </div>
       ) : (
-        <div>
+        <div className={styles.post_header}>
           <span>Título</span>
           <span>Ações</span>
         </div>
       )}
       {posts && posts.map((post) => (
-        <div key={post.id}>
+        <div key={post.id} className={styles.post_row}>
           <p>{post.title}</p>
           <div>
             <Link to={`/posts/${post.id}`} className="btn btn-outline">
