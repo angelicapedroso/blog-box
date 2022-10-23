@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import {
   collection,
   query,
-  // where,
+  where,
   orderBy,
   onSnapshot,
 } from 'firebase/firestore';
@@ -25,8 +25,15 @@ const useFetchDocuments = (docCollection, search = null, uid = null) => {
       try {
         let q;
 
-        // eslint-disable-next-line prefer-const
-        q = await query(collectionRef, orderBy('createAt', 'desc'));
+        if (search) {
+          q = query(
+            collectionRef,
+            where('tags', 'array-contains', search),
+            orderBy('createAt', 'desc'),
+          );
+        } else {
+          q = await query(collectionRef, orderBy('createAt', 'desc'));
+        }
 
         await onSnapshot(q, (querySnapshot) => {
           setDocuments(

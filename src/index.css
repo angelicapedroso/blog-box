@@ -82,9 +82,13 @@ textarea {
   font-size: 1em;
 }
 
-.btn.btn-dark {
-  background-color: var(--color-one);
+.btn.btn-light {
+  background-color: var(--color-four);
   border-radius: 0;
+}
+
+.btn.btn-light:hover {
+  background-color: var(--color-five);
 }
 
 .btn.btn-outline {

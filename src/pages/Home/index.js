@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './styles.module.css';
 import useFetchDocuments from '../../hooks/useFetchDocuments';
 import PostDetail from '../../components/PostDetail';
@@ -8,8 +8,16 @@ function Home() {
   const [query, setQuery] = useState('');
   const { documents: posts, loading } = useFetchDocuments('posts');
 
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (query) {
+      return navigate(`/search?q=${query}`);
+    }
+
+    return null;
   };
 
   return (
@@ -22,7 +30,7 @@ function Home() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button type="submit" className="btn btn-dark">Buscar</button>
+        <button type="submit" className="btn btn-light">Buscar</button>
       </form>
       <div className={styles.posts}>
         {loading && <p>Carregando...</p>}
