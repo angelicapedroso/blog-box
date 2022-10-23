@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import styles from './styles.module.css';
 
 function PostDetail({ post }) {
   return (
-    <div>
+    <div className={styles.post_detail}>
       <img src={post.image} alt={post.title} />
       <h2>{post.title}</h2>
-      <p>{post.createdBy}</p>
-      <div>
+      <p className={styles.createdby}>{post.createBy}</p>
+      <div className={styles.tags}>
         {post.tags.map((tag) => (
           <p key={tag}>
             <span>#</span>
@@ -29,6 +30,6 @@ PostDetail.propTypes = {
     title: PropTypes.string,
     image: PropTypes.string,
     tags: PropTypes.arrayOf(PropTypes.string),
-    createdBy: PropTypes.string,
+    createBy: PropTypes.string,
   }).isRequired,
 };
