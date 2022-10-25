@@ -4,16 +4,12 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.5em 2em;
-  border-bottom: 0.05em solid var(--color-four);;
+  border-bottom: 0.05em solid var(--color-three);;
 }
 
-.brand {
-  font-size: 1.2em;
-}
-
-.brand span {
-  font-weight: 900;
-  text-transform: uppercase;
+.logo {
+  font-size: 1.4em;
+  color: var(--color-four)
 }
 
 .links_list {

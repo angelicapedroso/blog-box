@@ -8,11 +8,12 @@ function Navbar() {
   const { user } = useAuthValue();
   const { logout } = useAuthentication();
 
+  const logo = '< CODEBlog />';
+
   return (
     <nav className={styles.navbar}>
-      <NavLink to="/" className={styles.brand}>
-        <span>Code</span>
-        Blog
+      <NavLink to="/" className={styles.logo}>
+        {logo}
       </NavLink>
       <ul className={styles.links_list}>
         <li>
