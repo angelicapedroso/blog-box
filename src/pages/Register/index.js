@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useAuthentication from '../../hooks/useAuthentication';
+import Container from './styles';
 
 function Register() {
   const [name, setName] = useState('');
@@ -36,11 +37,20 @@ function Register() {
     }
   }, [authError]);
 
+  const logo = '< CODEBlog />';
+
   return (
-    <div>
-      <h1>Cadastre-se para começar a postar</h1>
-      <p>Crie sua conta e compartilhe suas ideias e histórias</p>
+    // page login
+    <Container>
+      {/* container-form */}
+      <div className="logo">
+        <h1>{logo}</h1>
+      </div>
       <form onSubmit={handleSubmit}>
+        <div className="title">
+          <h2>Bem-vindx!</h2>
+          <h3>Cadastre-se para começar a postar!</h3>
+        </div>
         <label htmlFor="name">
           <span>Nome:</span>
           <input
@@ -85,7 +95,7 @@ function Register() {
         {loading && <button className="btn" type="submit" disabled>Aguarde...</button>}
         {error && <p className="error">{error}</p>}
       </form>
-    </div>
+    </Container>
   );
 }
 
