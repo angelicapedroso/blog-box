@@ -1,15 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import styles from './styles.module.css';
+import ContainerPostDetail from './styles';
 
 function PostDetail({ post }) {
   return (
-    <div className={styles.post_detail}>
+    <ContainerPostDetail>
       <img src={post.image} alt={post.title} />
       <h2>{post.title}</h2>
-      <p className={styles.createdby}>{post.createBy}</p>
-      <div className={styles.tags}>
+      <p className="createdby">
+        -
+        {post.createBy}
+      </p>
+      <div className="tags">
         {post.tags.map((tag) => (
           <p key={tag}>
             <span>#</span>
@@ -17,8 +20,8 @@ function PostDetail({ post }) {
           </p>
         ))}
       </div>
-      <Link to={`/posts/${post.id}`} className="btn btn-outline">Ler</Link>
-    </div>
+      <Link to={`/posts/${post.id}`} className="btn">Ler</Link>
+    </ContainerPostDetail>
   );
 }
 
