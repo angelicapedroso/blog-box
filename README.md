@@ -11,7 +11,7 @@ Link para o blog: https://code-blog-theta.vercel.app/
 - React
 - React Router
 - Context API
-- CSS Modules
+- Styled Components
 - Firebase
 
 ## Como rodar o projeto
