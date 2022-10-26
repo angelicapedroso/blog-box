@@ -5,7 +5,7 @@ const ContainerCreatePost = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: var(--color-two);
-  max-width: 60%;
+  max-width: 80%;
   margin: 3em auto;
   border-radius: 0.5em;
   min-height: 400px;
@@ -27,6 +27,10 @@ const ContainerCreatePost = styled.div`
 
   button {
     margin: 1em auto;
+
+    &:hover {
+      background-color: var(--color-four);
+    }
   }
 `;
 

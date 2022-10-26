@@ -8,7 +8,6 @@ const ContainerPostDetail = styled.div`
   width: 60%;
   margin: 0 auto;
   margin-bottom: 2rem;
-  background: #fff;
   background-color: var(--color-two);
 
   img {

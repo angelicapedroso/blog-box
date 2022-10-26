@@ -1,14 +1,14 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import useFetchDocument from '../../hooks/useFetchDocument';
-import styles from './styles.module.css';
+import ContainerPost from './styles';
 
 function Post() {
   const { id } = useParams();
   const { document: post, loading } = useFetchDocument('posts', id);
 
   return (
-    <div className={styles.post_container}>
+    <ContainerPost>
       {loading && <p>Carregando...</p>}
       {post && (
         <div>
@@ -16,7 +16,7 @@ function Post() {
           <img src={post.image} alt={post.title} />
           <p>{post.body}</p>
           <h3>Este post fala sobre:</h3>
-          <div className={styles.tags}>
+          <div className="tags">
             {post.tags.map((tag) => (
               <p key={tag}>
                 <span>#</span>
@@ -26,7 +26,7 @@ function Post() {
           </div>
         </div>
       )}
-    </div>
+    </ContainerPost>
   );
 }
 
