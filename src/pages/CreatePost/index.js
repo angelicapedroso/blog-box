@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-// import styles from './styles.module.css';
 import { useNavigate } from 'react-router-dom';
+import ContainerCreatePost from './styles';
 import { useAuthValue } from '../../context/AuthContext';
 import useInsertDocument from '../../hooks/useInsertDocument';
 
@@ -47,13 +47,8 @@ function CreatePost() {
   };
 
   return (
-    <div>
-      <h1>Criar post</h1>
-      <p>Escreva algum post sobre tecnologia.</p>
-      <p>
-        Seja um conteúdo, dica, curiosidade, ou até algum meme pra se divertir.
-      </p>
-      <p>Não deixe de compartilhar seu conhecimento!</p>
+    <ContainerCreatePost>
+      <h3>Escreva um post sobre tecnologia para compartilhar seu conhecimento</h3>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">
           <span>Título:</span>
@@ -63,7 +58,6 @@ function CreatePost() {
             required
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="Insira um título para o seu post"
           />
         </label>
         <label htmlFor="image">
@@ -74,7 +68,6 @@ function CreatePost() {
             required
             value={image}
             onChange={(e) => setImage(e.target.value)}
-            placeholder="Adicione uma imagem"
           />
         </label>
         <label htmlFor="body">
@@ -84,18 +77,16 @@ function CreatePost() {
             required
             value={body}
             onChange={(e) => setBody(e.target.value)}
-            placeholder="Insira um conteúdo"
           />
         </label>
         <label htmlFor="image">
-          <span>Tags:</span>
+          <span>Tags: (separe por vírgulas)</span>
           <input
             type="text"
             name="tags"
             required
             value={tags}
             onChange={(e) => setTags(e.target.value)}
-            placeholder="Insira as tags separadas por vírgula"
           />
         </label>
         {!response.loading && <button className="btn" type="submit">Cadastrar</button>}
@@ -103,7 +94,7 @@ function CreatePost() {
         {response.error && <p className="error">{response.error}</p>}
         {formError && <p className="error">{formError}</p>}
       </form>
-    </div>
+    </ContainerCreatePost>
   );
 }
 

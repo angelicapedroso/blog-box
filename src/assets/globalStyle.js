@@ -63,8 +63,9 @@ textarea {
   border-bottom: 1px solid var(--color-five);
   padding: 0.5em 0;
   background-color: transparent;
-  color: var(--color-five);
   font-size: 1em;
+  font-family: Work Sans, sans-serif;
+  color: var(--color-five);
 }
 
 input:focus {
