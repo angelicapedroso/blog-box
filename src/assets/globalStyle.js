@@ -64,6 +64,7 @@ textarea {
   padding: 0.5em 0;
   background-color: transparent;
   color: var(--color-five);
+  font-size: 1em;
 }
 
 input:focus {

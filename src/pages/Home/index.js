@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import styles from './styles.module.css';
+import ContainerHome from './styles';
 import useFetchDocuments from '../../hooks/useFetchDocuments';
 import PostDetail from '../../components/PostDetail';
 
@@ -21,28 +21,28 @@ function Home() {
   };
 
   return (
-    <div className={styles.home}>
+    <ContainerHome>
       <h1>Veja os posts mais recentes</h1>
-      <form onSubmit={handleSubmit} className={styles.search_form}>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Ou faça uma busca por tags..."
+          placeholder="Ou faça uma busca por tags"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button type="submit" className="btn btn-light">Buscar</button>
+        <button type="submit" className="btn">Buscar</button>
       </form>
-      <div className={styles.posts}>
+      <div className="posts">
         {loading && <p>Carregando...</p>}
         {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}
         {posts && posts.length === 0 && (
-          <div className={styles.noposts}>
+          <div className="noposts">
             <p>Nenhum post encontrado</p>
             <Link to="/posts/create">Criar um post</Link>
           </div>
         )}
       </div>
-    </div>
+    </ContainerHome>
   );
 }
 
