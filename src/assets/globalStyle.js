@@ -1,4 +1,7 @@
-/* :root {
+import { createGlobalStyle } from 'styled-components';
+
+export default createGlobalStyle`
+:root {
   --color-one: #000000;
   --color-two: #161616;
   --color-three: #393838;
@@ -117,6 +120,8 @@ button[disabled] {
   color: #721c24;
   background-color: var(--color-five);
   /* border: 1px solid var(--color-three); */
-  /* padding: 5px; */
-  /* border-radius: 5px; */
-/* } */ 
+  padding: 5px;
+  border-radius: 5px;
+}
+
+`;

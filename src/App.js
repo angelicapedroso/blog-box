@@ -17,6 +17,7 @@ import Dashboard from './pages/Dashboard';
 import Search from './pages/Search';
 import Post from './pages/Post';
 import EditPost from './pages/EditPost';
+import GlobalStyle from './assets/globalStyle';
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -67,6 +68,7 @@ function App() {
               />
             </Routes>
           </div>
+          <GlobalStyle />
         </BrowserRouter>
         {/* <Footer /> */}
       </AuthProvider>

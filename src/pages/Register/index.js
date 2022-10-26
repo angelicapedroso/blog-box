@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import styles from './styles.module.css';
 import useAuthentication from '../../hooks/useAuthentication';
 
 function Register() {
@@ -38,7 +37,7 @@ function Register() {
   }, [authError]);
 
   return (
-    <div className={styles.register}>
+    <div>
       <h1>Cadastre-se para começar a postar</h1>
       <p>Crie sua conta e compartilhe suas ideias e histórias</p>
       <form onSubmit={handleSubmit}>
