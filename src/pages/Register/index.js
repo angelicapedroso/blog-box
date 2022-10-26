@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useAuthentication from '../../hooks/useAuthentication';
-import Container from './styles';
+import ContainerForm from './styles';
 
 function Register() {
   const [name, setName] = useState('');
@@ -40,9 +40,7 @@ function Register() {
   const logo = '< CODEBlog />';
 
   return (
-    // page login
-    <Container>
-      {/* container-form */}
+    <ContainerForm>
       <div className="logo">
         <h1>{logo}</h1>
       </div>
@@ -95,7 +93,7 @@ function Register() {
         {loading && <button className="btn" type="submit" disabled>Aguarde...</button>}
         {error && <p className="error">{error}</p>}
       </form>
-    </Container>
+    </ContainerForm>
   );
 }
 

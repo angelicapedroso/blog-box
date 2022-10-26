@@ -12,7 +12,7 @@ const Container = styled.header`
 
   .logo {
     font-size: 1.4em;
-    color: var(--color-four);
+    // color: var(--color-four);
   }
 
   .logo:hover {

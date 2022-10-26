@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Container = styled.div`
+const ContainerForm = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -47,4 +47,4 @@ const Container = styled.div`
   }
 `;
 
-export default Container;
+export default ContainerForm;
