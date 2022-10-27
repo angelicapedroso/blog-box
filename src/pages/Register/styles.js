@@ -54,19 +54,15 @@ const ContainerForm = styled.div`
     align-items: center;
     display: flex;
     justify-content: center;
-    min-height: 100vh;
-    min-width: 100vw;
     background: var(--color-one);
 
     form {
       background: var(--color-four);
       border-radius: 8px;
-      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
       display: flex;
       flex-direction: column;
       justify-content: center;
-      min-height: 60vh;
-      min-width: 320px;
+      min-width: 300px;
       padding: 2rem;
     }
   }
