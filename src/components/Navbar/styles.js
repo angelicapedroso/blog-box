@@ -96,7 +96,7 @@ const Container = styled.header`
     }
 
     .logo {
-      align-self: flex-start;
+      display: none;
     }
   `}
   }

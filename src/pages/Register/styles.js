@@ -45,6 +45,31 @@ const ContainerForm = styled.div`
   button {
     width: 100%;
   }
+
+  @media (max-width: 768px) {
+    .logo {
+      display: none;
+    }
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    background: var(--color-one);
+
+    form {
+      background: var(--color-four);
+      border-radius: 8px;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 60vh;
+      min-width: 320px;
+      padding: 2rem;
+    }
+  }
 `;
 
 export default ContainerForm;
