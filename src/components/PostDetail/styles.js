@@ -32,9 +32,6 @@ const ContainerPostDetail = styled.div`
 
   .tags p {
     margin: 0.5em;
-  }
-
-  .tags span {
     font-weight: bold;
   }
 

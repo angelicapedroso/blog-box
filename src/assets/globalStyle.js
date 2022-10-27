@@ -115,10 +115,6 @@ input:focus {
 //   background-color: var(--color-three);
 // }
 
-.btn.btn-danger:hover {
-  background-color: #dc3545;
-}
-
 button[disabled] {
   background-color: var(--color-three);
 }
