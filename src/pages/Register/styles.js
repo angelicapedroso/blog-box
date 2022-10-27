@@ -54,6 +54,8 @@ const ContainerForm = styled.div`
     align-items: center;
     display: flex;
     justify-content: center;
+    min-height: 100vh;
+    min-width: 100vw;
     background: var(--color-one);
 
     form {
@@ -62,7 +64,8 @@ const ContainerForm = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: center;
-      min-width: 300px;
+      min-height: 60vh;
+      min-width: 320px;
       padding: 2rem;
     }
   }
