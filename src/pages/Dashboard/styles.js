@@ -32,6 +32,7 @@ const ContainerDashboard = styled.div`
     border-bottom: 2px solid var(--color-two);
     width: 80%;
     padding: 10px;
+    font-size: 1.2em;
   }
 
   .post_row {
