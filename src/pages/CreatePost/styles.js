@@ -32,6 +32,10 @@ const ContainerCreatePost = styled.div`
       background-color: var(--color-four);
     }
   }
+
+  textarea {
+    max-width: 100%;
+  }
 `;
 
 export default ContainerCreatePost;
