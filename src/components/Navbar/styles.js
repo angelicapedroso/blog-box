@@ -12,7 +12,7 @@ const Container = styled.header`
 
   .logo {
     font-size: 1.4em;
-    color: var(--color-four);
+    // color: var(--color-four);
   }
 
   .logo:hover {
@@ -41,6 +41,7 @@ const Container = styled.header`
   @media (max-width: 768px) {
     .button_menu {
       display: block;
+      margin-bottom: 1.5em;
     }
 
     .button_menu button {

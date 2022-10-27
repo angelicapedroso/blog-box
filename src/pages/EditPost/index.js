@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import styles from './styles.module.css';
+import ContainerCreatePost from '../CreatePost/styles';
 import useFetchDocument from '../../hooks/useFetchDocument';
 import useUpdateDocument from '../../hooks/useUpdateDocument';
 
@@ -53,13 +53,13 @@ function EditPost() {
   };
 
   return (
-    <div className={styles.edit}>
+    <ContainerCreatePost>
       {post && (
         <>
-          <h2>
+          <h3>
             Editar post:
             {post.title}
-          </h2>
+          </h3>
           <form onSubmit={handleSubmit}>
             <label htmlFor="name">
               <span>Título:</span>
@@ -121,7 +121,7 @@ function EditPost() {
           </form>
         </>
       )}
-    </div>
+    </ContainerCreatePost>
   );
 }
 

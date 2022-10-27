@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from './styles.module.css';
+import ContainerForm from '../Register/styles';
 import useAuthentication from '../../hooks/useAuthentication';
 
 function Login() {
@@ -30,11 +30,18 @@ function Login() {
     }
   }, [authError]);
 
+  const logo = '< CODEBlog />';
+
   return (
-    <div className={styles.login}>
-      <h1>Entrar</h1>
-      <p>Faça login para entrar na sua conta</p>
+    <ContainerForm>
+      <div className="logo">
+        <h1>{logo}</h1>
+      </div>
       <form onSubmit={handleSubmit}>
+        <div className="title">
+          <h2>Olá!</h2>
+          <h3>Faça login para acessar sua conta!</h3>
+        </div>
         <label htmlFor="email">
           <span>E-mail:</span>
           <input
@@ -59,7 +66,7 @@ function Login() {
         {loading && <button className="btn" type="submit" disabled>Aguarde...</button>}
         {error && <p className="error">{error}</p>}
       </form>
-    </div>
+    </ContainerForm>
   );
 }
 
