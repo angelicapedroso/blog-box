@@ -19,8 +19,7 @@ function Dashboard() {
 
   return (
     <ContainerDashboard>
-      <h2>Dashboard</h2>
-      <h3>Gerencie os seus posts</h3>
+      <h2>Gerencie os seus posts</h2>
       {posts && posts.length === 0 ? (
         <div className="noposts">
           <p>Não foi encontrado nenhum post</p>

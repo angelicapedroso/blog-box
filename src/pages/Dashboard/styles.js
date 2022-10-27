@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const ContainerDashboard = styled.div`
-  color: var(--color-five);
+  color: var(--color-four);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -9,12 +9,8 @@ const ContainerDashboard = styled.div`
   align-items: center;
 
   h2 {
-    font-size: 2.2em;
+    font-size: 2em;
     margin-bottom: 0.5em;
-  }
-
-  h3 {
-    margin-bottom: 1em;
   }
 
   .noposts {
@@ -41,10 +37,10 @@ const ContainerDashboard = styled.div`
   .post_row {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid var(--color-three);
     width: 80%;
     padding: 1rem;
-    color: var(--color-four);
+    color: var(--color-five);
+    background-color: var(--color-two);
   }
 
   .post_row p {
@@ -57,27 +53,26 @@ const ContainerDashboard = styled.div`
     height: 2rem;
     width: 5em;
     font-size: 1em;
-    border: 1px solid var(--color-four);
-    color: var(--color-four);
+    color: var(--color-one);
     font-weight: bold;
+    background-color: var(--color-five);
   }
 
   a:hover {
-    background-color: var(--color-five);
+    background-color: var(--color-four);
     transition: 0.5s ease all;
     color: var(--color-one);
   }
 
   button {
-    background: transparent;
+    background: var(--color-five);
     border: none;
     cursor: pointer;
-    color: var(--color-four);
+    color: var(--color-one);
     padding: 10px;
     height: 2.6rem;
     width: 5rem;
     font-size: 1em;
-    border: 1px solid var(--color-four);
     font-weight: bold;
 
     &:hover {
