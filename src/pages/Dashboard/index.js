@@ -22,7 +22,7 @@ function Dashboard() {
       <h2>Gerencie os seus posts</h2>
       {posts && posts.length === 0 ? (
         <div className="noposts">
-          <p>Não foi encontrado nenhum post</p>
+          <p>Não foi encontrado nenhum post.</p>
           <Link to="/posts/create" className="btn">
             Criar um post
           </Link>
